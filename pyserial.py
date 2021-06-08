@@ -62,10 +62,10 @@ def write_serial():
                 out = [int(val[i:i+2], 16)]
                 print(bytes(out))
                 ser.write(bytes(out))
+            time.sleep(0.01)
 
 read_thread = threading.Thread(target=read_serial)
 write_thread = threading.Thread(target=write_serial)
 
 read_thread.start()
 write_thread.start()
-
